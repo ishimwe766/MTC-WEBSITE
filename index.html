@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhanga Technical Center</title>
+<link rel="icon" href="assets/image/logo.png" type="logo/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+
+<header>
+    <div class="logo-section">
+        <img src="assets/image/logo.png" alt="MTC Logo">
+        <h1>MUHANGA TECHNICAL CENTER</h1>
+    </div>
+    
+<nav class="nav-slider">
+    <div class="slider-indicator"></div>
+
+    <ul>
+        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#services" class="nav-link"><i class="fas fa-briefcase"></i> Services</a></li>
+        <li><a href="#course" class="nav-link"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-users"></i> About</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#feedback" class="nav-link"><i class="fas fa-comments"></i> Feedback</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Muhanga Technical Center</h1>
+        <p>Empowering students with technical skills for a better future.</p>
+        <a href="#services" class="btn">Explore More</a>
+    </div>
+    <body>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeMenu()"></div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu">
+    <span class="close-menu" onclick="closeMenu()">✖</span>
+
+    <h3 class="logo">Menu</h3>
+    <a href="#home" onclick="closeMenu()">🏠 Home</a>
+    <a href="#services" onclick="closeMenu()">💼 Services</a>
+    <a href="#course" onclick="closeMenu()">🎓 Courses</a>
+    <a href="#about" onclick="closeMenu()">👥 About</a>
+    <a href="#contact" onclick="closeMenu()">✉ Contact</a>
+    <a href="#feedback" onclick="closeMenu()">💬 Feedback</a>
+</div>
+<!-- Language Switcher -->
+<div class="language-switcher">
+    <select id="languageSwitcher">
+        <option value="en">🌍 English</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="kin">🇷🇼 Kinyarwanda</option>
+        <option value="sw">🇹🇿 Kiswahili</option>
+    </select>
+</div>
+
+<button class="menu-btn" onclick="openMenu()">☰</button>
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+</script>
+</section>
+<div id="google_translate_element"></div>
+<!-- SERVICES -->
+<section id="services" class="services-section">
+
+    <div class="section-header">
+        <h2>Our Services</h2>
+        <p>We provide quality technical education and practical training for students.</p>
+    </div>
+  <div class="grid">
+
+    <!-- MODERN WORKSHOPS -->
+    <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Modern Workshops</h3>
+        <p>
+            Hands-on practical training in fully equipped workshops
+            for real-world technical experience.
+        </p>
+    </div>
+
+    <!-- EXPERT INSTRUCTORS -->
+    <div class="service-card">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Expert Instructors</h3>
+        <p>
+            Learn from qualified and experienced teachers in all
+            technical and professional departments.
+        </p>
+    </div>
+
+    <!-- INDUSTRIAL TRAINING -->
+    <div class="service-card">
+        <i class="fas fa-briefcase"></i>
+        <h3>Industrial Training</h3>
+        <p>
+            Gain industry exposure through internships, field practice,
+            and workplace training opportunities.
+        </p>
+    </div>
+
+    <!-- CAREER DEVELOPMENT -->
+    <div class="service-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Career Development</h3>
+        <p>
+            We support students with entrepreneurship skills,
+            innovation, and career guidance programs.
+        </p>
+    </div>
+
+  <!-- STUDENT REGISTRATION -->
+<div class="service-card mini-register-card">
+
+    <div class="register-icon">
+        <i class="fas fa-user-plus"></i>
+    </div>
+
+    <h3>Student Registration</h3>
+
+    <p>
+        Join Muhanga Technical Center and start your professional journey today.
+    </p>
+
+    <a href="#registration" class="mini-register-btn">
+        Register Now
+    </a>
+
+</div>
+</section>
+<script>
+function goHome() {
+    document.querySelector('#home').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
+<section id="course" class="section-padding course-section">
+
+    <div class="section-header">
+        <h2>Our Programs & Courses</h2>
+        <p>Discover our range of professional technical programs</p>
+    </div>
+
+    <div class="course-grid">
+
+        <!-- ICT -->
+        <div class="course-card">
+            <img src="assets/image/sod 1.jpeg" alt="ICT & Software Development">
+            <h3>ICT & Software Development</h3>
+            <p>Learn programming, networking and modern software skills.</p>
+        </div>
+
+        <!-- NETWORKING -->
+        <div class="course-card">
+            <img src="assets/image/nit 1.jpeg" alt="Networking Technology">
+            <h3>Networking Technology</h3>
+            <p>Master computer networks, servers and system connectivity.</p>
+        </div>
+
+        <!-- AUTOMOBILE -->
+        <div class="course-card">
+            <img src="assets/image/auto 3.jpeg" alt="Automobile Technology">
+            <h3>Automobile Technology</h3>
+            <p>Hands-on training in vehicle repair and mechanics.</p>
+        </div>
+
+        <!-- BUILDING -->
+        <div class="course-card">
+            <img src="assets/image/bdcc 2.jpeg" alt="Building Technology">
+            <h3>Building Technology</h3>
+            <p>Construction skills, design and practical building work.</p>
+        </div>
+
+        <!-- ACCOUNTING -->
+        <div class="course-card">
+            <img src="assets/image/acc 2.jpeg" alt="Accounting">
+            <h3>Accounting</h3>
+            <p>Financial management, bookkeeping and business accounting.</p>
+        </div>
+
+        <!-- FOOD & BEVERAGE -->
+        <div class="course-card">
+            <img src="assets/image/WhatsApp Image 2026-04-29 at 3.09.16 PM.jpeg" alt="Food and Beverage">
+            <h3>Food & Beverage</h3>
+            <p>Culinary arts, hospitality and professional cooking skills.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="section about-section">
+
+    <h2>About Us</h2>
+
+    <div class="about-container">
+
+        <!-- TEXT + HISTORY -->
+        <div class="about-text">
+
+            <h3>Our History</h3>
+            <p>
+                Muhanga Technical Center was established to provide quality technical and vocational education
+                in Rwanda. Over the years, the school has grown into a center of excellence, producing skilled
+                graduates in ICT, engineering, business, and hospitality sectors.
+            </p>
+
+            <h3>Our Mission</h3>
+            <p>
+                To equip students with practical skills, innovation, and discipline that prepare them for employment
+                and entrepreneurship.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+                To become a leading technical training institution in Rwanda and East Africa.
+            </p>
+
+        </div>
+
+        <!-- IMAGES SECTION -->
+        <div class="about-gallery">
+
+            <div class="about-box">
+                <img src="assets/image/WhatsApp Image 2026-04-29 at 3.09.20 PM (1).jpeg" alt="Students">
+                <img src="assets/image/sod 1.jpeg" alt="Students">
+                <img src="assets/image/WhatsApp Image 2026-04-29 at 2.43.53 PM (1).jpeg" alt="Students">
+
+                <p>Students Learning</p>
+            </div>
+
+            <div class="about-box">
+                <img src="assets/image/teacher.png" alt="Teachers">
+                <p>Qualified Teachers</p>
+            </div>
+
+            <div class="about-box">
+                <img src="assets/image/ropresentor.png" alt="Head of School">
+                <p>Head of School</p>
+            </div>
+
+            <div class="about-box">
+                <img src="assets/image/acc 2.jpeg" alt="Classroom">
+                <p>Modern Classrooms</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="section contact-section">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact-container">
+
+        <!-- LEFT: CONTACT INFO + MAP + DOWNLOAD -->
+        <div class="contact-info">
+
+            <h3>Get In Touch</h3>
+
+            <p><i class="fas fa-phone"></i> +250 784990502/ 0726120427</p>
+            <p><i class="fas fa-envelope"></i> info@muhangatech.rw</p>
+            <p><i class="fas fa-map-marker-alt"></i> Muhanga District, Rwanda</p>
+
+            <!-- MAP -->
+            <div class="map-box">
+                <iframe 
+                    src="https://www.google.com/maps?q=Muhanga%20District%20Rwanda&output=embed"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- DOWNLOAD -->
+            <div class="download-box">
+                <h4>School Requirements</h4>
+                <p>Download admission requirements document</p>
+
+                <a href="assets/image/muhanga_school_requirements.pdf" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+
+        </div>
+<!-- Quick Message Form Segment -->
+                <div style="background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <h3 style="color: #333; font-size: 1.6rem; margin-bottom: 20px;">Send a Message</h3>
+                    
+                    <!-- Alert box for success/error messages -->
+                    <div id="form-alert" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 5px;"></div>
+                    
+                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; gap: 15px;">
+                            <input type="text" id="name" required placeholder="Your Name" style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; outline: none;">
+                            <input type="email" id="email" required placeholder="Your Email" style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; outline: none;">
+                        </div>
+                        <input type="text" id="subject" required placeholder="Subject" style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; outline: none;">
+                        <textarea id="message" required placeholder="Your Message..." rows="4" style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; outline: none; resize: none;"></textarea>
+                        <button type="submit" id="submit-btn" style="background: #2c3e50; color: #fff; border: none; padding: 15px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='#d35400'" onmouseout="this.style.background='#2c3e50'">
+                            <i class="fas fa-paper-plane"></i> <span id="btn-text">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+<script>
+    // Handle form submission via Fetch API
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent page refresh
+
+        const btnText = document.getElementById('btn-text');
+        const alertBox = document.getElementById('form-alert');
+        
+        // Collect form data
+        const data = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+
+        // Loading state
+        btnText.innerText = 'Sending...';
+        alertBox.style.display = 'none';
+
+        try {
+            const response = await fetch('http://localhost:5500/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Success message
+                alertBox.style.display = 'block';
+                alertBox.style.backgroundColor = '#d4edda';
+                alertBox.style.color = '#155724';
+                alertBox.innerText = result.success;
+                this.reset(); // Clear form
+            } else {
+                // Error from server
+                alertBox.style.display = 'block';
+                alertBox.style.backgroundColor = '#f8d7da';
+                alertBox.style.color = '#721c24';
+                alertBox.innerText = result.error || 'Failed to send message.';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alertBox.style.display = 'block';
+            alertBox.style.backgroundColor = '#f8d7da';
+            alertBox.style.color = '#721c24';
+            alertBox.innerText = 'An error occurred. Make sure the server is running.';
+        } finally {
+            btnText.innerText = 'Send Message'; // Reset button
+        }
+    });
+</script>
+
+            </div>
+        </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section id="feedback" class="feedback-section">
+
+    <h2>Community Feedback</h2>
+
+    <!-- BUTTON -->
+    <div class="feedback-btn-area">
+        <button class="feedback-btn" onclick="openFeedbackForm()">
+            <i class="fas fa-comment-dots"></i> Leave Feedback
+        </button>
+    </div>
+
+    <!-- MODAL FORM -->
+    <div id="feedbackFormBox" class="feedback-modal">
+
+        <div class="feedback-modal-content">
+
+            <span class="close-btn" onclick="openFeedbackForm()">×</span>
+
+            <h3>Share Your Feedback</h3>
+
+            <form id="feedbackForm">
+
+                <!-- NAME -->
+                <input type="text" id="fb_name" placeholder="Your Name (optional)">
+
+                <!-- ROLE -->
+                <select id="fb_role">
+                    <option value="Student">Student</option>
+                    <option value="Parent">Parent</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Visitor">Visitor</option>
+                </select>
+
+                <!-- STARS -->
+                <div class="stars">
+                    <label>Rating:</label>
+                    <div>
+                        <input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐
+                        <input type="radio" name="rating" value="4"> ⭐⭐⭐⭐
+                        <input type="radio" name="rating" value="3"> ⭐⭐⭐
+                        <input type="radio" name="rating" value="2"> ⭐⭐
+                        <input type="radio" name="rating" value="1"> ⭐
+                    </div>
+                </div>
+
+                <!-- MESSAGE -->
+                <textarea id="fb_message" placeholder="Write your feedback..." required></textarea>
+
+                <!-- SUBMIT -->
+                <button type="submit">Submit Feedback</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- DISPLAY FEEDBACK -->
+    <div id="feedbackList" class="feedback-list"></div>
+<script>
+// OPEN / CLOSE MODAL
+function openFeedbackForm() {
+    const modal = document.getElementById("feedbackFormBox");
+
+    if (modal.style.display === "flex") {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "flex";
+        modal.style.justifyContent = "center";
+        modal.style.alignItems = "center";
+    }
+}
+
+// SUBMIT FEEDBACK
+document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("fb_name").value || "Anonymous";
+    const role = document.getElementById("fb_role").value;
+    const message = document.getElementById("fb_message").value;
+
+    let rating = document.querySelector('input[name="rating"]:checked');
+    rating = rating ? rating.value : 5;
+
+    // Create feedback card
+    const feedbackItem = document.createElement("div");
+    feedbackItem.classList.add("feedback-item");
+
+    feedbackItem.innerHTML = `
+        <div class="stars">${"⭐".repeat(rating)}</div>
+        <strong>${name}</strong> (${role})
+        <p>${message}</p>
+    `;
+
+    document.getElementById("feedbackList").prepend(feedbackItem);
+
+    // reset form
+    this.reset();
+
+    // close modal
+    document.getElementById("feedbackFormBox").style.display = "none";
+});
+</script>
+</section>
+</section>
+<section id="registration" class="section registration-section">
+<div id="registration" class="container">
+
+    <h2>Student Registration</h2>
+
+    <div id="alert"></div>
+
+    <form id="form">
+
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <input type="email" id="email" placeholder="Email" required>
+
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option>ICT</option>
+            <option>Networking</option>
+            <option>ICT& Software Development</option>
+            <option>Automobile</option>
+            <option>Building</option>
+        </select>
+
+        <select id="network" required>
+            <option value="mtn">MTN Mobile Money</option>
+            <option value="airtel">Airtel Money</option>
+        </select>
+
+        <div id="paymentNumber">
+            MTN Pay To:0784990502
+        </div>
+
+        <input type="text" id="paymentCode" placeholder="Transaction ID" required>
+
+  <a href="#registration" class="mini-register-btn">
+    Register Now
+</a>
+    </form>
+
+</div>
+</section>
+<script>
+// PAYMENT SWITCH
+const network = document.getElementById("network");
+const paymentNumber = document.getElementById("paymentNumber");
+
+network.addEventListener("change", function () {
+
+    if (this.value === "mtn") {
+        paymentNumber.innerHTML = "MTN Pay To: 0788123456";
+    } else {
+        paymentNumber.innerHTML = "Airtel Pay To: 0733123456";
+    }
+
+});
+
+// FORM SUBMIT
+document.getElementById("form").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const alertBox = document.getElementById("alert");
+    const btn = document.getElementById("btn");
+
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        course: document.getElementById("course").value,
+        network: document.getElementById("network").value,
+        paymentCode: document.getElementById("paymentCode").value
+    };
+
+    btn.innerText = "Processing...";
+    btn.disabled = true;
+
+    try {
+
+        const res = await fetch("http://localhost:5500/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        alertBox.style.display = "block";
+
+        if (result.success) {
+            alertBox.style.background = "#d4edda";
+            alertBox.style.color = "#155724";
+            alertBox.innerText = "✔ Registration Successful (PENDING verification)";
+            document.getElementById("form").reset();
+        } else {
+            alertBox.style.background = "#f8d7da";
+            alertBox.style.color = "#721c24";
+            alertBox.innerText = "❌ Failed to register";
+        }
+
+    } catch (error) {
+
+        alertBox.style.display = "block";
+        alertBox.style.background = "#f8d7da";
+        alertBox.style.color = "#721c24";
+        alertBox.innerText = "⚠ Server not running";
+
+    }
+
+    btn.innerText = "Register Now";
+    btn.disabled = false;
+
+});
+</script>
+    </div>
+
+</section>
+</section>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div class="footer-box">
+            <h3>Muhanga Technical Center</h3>
+            <p>
+                A leading technical and vocational institution committed to producing skilled,
+                innovative and job-ready graduates.
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Muhanga District, Rwanda</p>
+            <p><i class="fas fa-phone"></i> +250 784990502/ 0726120427</p>
+            <p><i class="fas fa-envelope"></i> info@mtc.rw</p>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Muhanga Technical Center. All Rights Reserved.</p>
+    </div>
+
+</footer>
+</body>
+</html> 
