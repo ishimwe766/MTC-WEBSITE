@@ -732,67 +732,43 @@ const paymentNumber = document.getElementById("paymentNumber");
 network.addEventListener("change", function () {
 
     if (this.value === "mtn") {
-        paymentNumber.innerHTML = "MTN Pay To: 0788123456";
+        paymentNumber.innerHTML = "MTN Pay To: +250 784990502";
     } else {
-        paymentNumber.innerHTML = "Airtel Pay To: 0733123456";
+        paymentNumber.innerHTML = "Airtel Pay To: +250 726120427";
     }
 
 });
 
 // FORM SUBMIT
-document.getElementById("form").addEventListener("submit", async function(e) {
+document.getElementById("form").addEventListener("submit", function(e) {
 
     e.preventDefault();
 
-    const alertBox = document.getElementById("alert");
-    const btn = document.getElementById("btn");
+    // GET VALUES
+    const studentName = document.getElementById("name").value;
+    const course = document.getElementById("course").value;
 
-    const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        course: document.getElementById("course").value,
-        network: document.getElementById("network").value,
-        paymentCode: document.getElementById("paymentCode").value
-    };
+    // ALERT BOX
+    const alertBox = document.getElementById("alertBox");
 
-    btn.innerText = "Processing...";
-    btn.disabled = true;
+    // SHOW MESSAGE
+    alertBox.style.display = "block";
+    alertBox.style.background = "#d4edda";
+    alertBox.style.color = "#155724";
+    alertBox.style.padding = "15px";
+    alertBox.style.marginTop = "15px";
+    alertBox.style.borderRadius = "10px";
+    alertBox.style.fontWeight = "bold";
 
-    try {
+    alertBox.innerHTML = `
+        🎉 Welcome <b>${studentName}</b> to 
+        <b>MUHANGA TECHNICAL CENTER</b><br>
+        You have successfully registered for 
+        <b>${course}</b>.
+    `;
 
-        const res = await fetch("http://localhost:5500/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-
-        const result = await res.json();
-
-        alertBox.style.display = "block";
-
-        if (result.success) {
-            alertBox.style.background = "#d4edda";
-            alertBox.style.color = "#155724";
-            alertBox.innerText = "✔ Registration Successful (PENDING verification)";
-            document.getElementById("form").reset();
-        } else {
-            alertBox.style.background = "#f8d7da";
-            alertBox.style.color = "#721c24";
-            alertBox.innerText = "❌ Failed to register";
-        }
-
-    } catch (error) {
-
-        alertBox.style.display = "block";
-        alertBox.style.background = "#f8d7da";
-        alertBox.style.color = "#721c24";
-        alertBox.innerText = "⚠ Server not running";
-
-    }
-
-    btn.innerText = "Register Now";
-    btn.disabled = false;
+    // RESET FORM
+    document.getElementById("form").reset();
 
 });
 </script>
@@ -832,7 +808,8 @@ window.addEventListener("scroll", () => {
 
 });
 </script>
-</section>
+    
+</>>
 </section>
 <footer class="footer">
 
