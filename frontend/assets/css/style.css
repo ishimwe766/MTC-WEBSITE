@@ -462,80 +462,6 @@ form button:hover{
     padding-top:20px;
 }
 
-/* =========================
-   SIDE MENU
-========================= */
-
-.menu-btn{
-    display:block;
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:#f59e0b;
-    color:#fff;
-    border:none;
-    padding:12px 15px;
-    border-radius:10px;
-    font-size:24px;
-    cursor:pointer;
-    z-index:4000;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-#sideMenu{
-    position:fixed;
-    top:0;
-    right:-280px;
-    width:260px;
-    height:100%;
-    background:#0f172a;
-    padding:40px 25px;
-    transition:0.4s ease;
-    z-index:3000;
-    overflow-y:auto;
-}
-
-#sideMenu.active{
-    right:0;
-}
-
-#sideMenu a{
-    display:block;
-    color:#fff;
-    text-decoration:none;
-    margin:18px 0;
-    font-size:18px;
-    padding:10px;
-    border-radius:8px;
-    transition:0.3s;
-}
-
-#sideMenu a:hover{
-    background:#f59e0b;
-}
-
-.close-menu{
-    color:#fff;
-    font-size:30px;
-    cursor:pointer;
-    display:block;
-    margin-bottom:25px;
-}
-
-#overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    display:none;
-    z-index:2500;
-}
-
-#overlay.active{
-    display:block;
-}
 
 /* =========================
    RESPONSIVE DESIGN
@@ -625,7 +551,7 @@ form button:hover{
         padding:60px 20px;
     }
 }
-* L.language-switcher {
+.language-switcher {
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -853,36 +779,12 @@ form button:hover{
         transform: translateY(0);
     }
 }
-
-/* =========================
-   PAGE CENTER
-========================= */
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    margin: 0;
-    padding: 0;
-}
-
-/* =========================
-   CONTAINER (MAIN CARD)
-========================= */
-.container {
-    width: 100%;
-    max-width: 450px;
-    margin: 60px auto;
-    background: #7fdacd;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
 /* TITLE */
 .container h2 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 20px;
-    font-size: 26px;
+    font-size: 10px;
 }
 
 /* =========================
@@ -971,5 +873,1536 @@ body {
     .container {
         margin: 20px;
         padding: 20px;
+    }
+}
+/* =========================
+   GLASS MENU BUTTON
+========================= */
+
+.glass-menu-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:5000;
+
+    width:65px;
+    height:65px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    color:rgb(3, 59, 245);
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+
+    transition:0.4s ease;
+}
+
+.glass-menu-btn:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.glass-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.5);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.4s;
+
+    z-index:3000;
+}
+
+.glass-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.glass-sidebar{
+    position:fixed;
+
+    top:20px;
+    right:-350px;
+
+    width:300px;
+    height:92vh;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.35);
+
+    transition:0.5s ease;
+
+    z-index:4000;
+
+    overflow-y:auto;
+}
+
+/* ACTIVE */
+.glass-sidebar.active{
+    right:20px;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.glass-top{
+    margin-bottom:35px;
+}
+
+.glass-dots{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.glass-dots span{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.glass-dots span:nth-child(1){
+    background:#ff5f57;
+}
+
+.glass-dots span:nth-child(2){
+    background:#febb2e;
+}
+
+.glass-dots span:nth-child(3){
+    background:#28c840;
+}
+
+.glass-top h1{
+    color:rgb(157, 219, 23);
+    font-size:38px;
+    font-weight:700;
+}
+
+/* =========================
+   MENU LINKS
+========================= */
+
+.glass-menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.glass-menu h3{
+    color:rgba(255,255,255,0.6);
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.glass-menu a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    text-decoration:none;
+
+    color:rgb(224, 237, 249);
+
+    padding:16px;
+
+    border-radius:15px;
+
+    transition:0.3s;
+
+    background:rgba(255,255,255,0.05);
+}
+
+.glass-menu a i{
+    font-size:20px;
+    min-width:25px;
+}
+
+.glass-menu a span{
+    font-size:17px;
+    font-weight:500;
+}
+
+/* HOVER */
+.glass-menu a:hover{
+    background:rgba(255,255,255,0.15);
+    transform:translateX(-5px);
+}
+
+/* ACTIVE */
+.glass-menu a.active{
+    background:rgba(255,255,255,0.18);
+}
+
+/* =========================
+   FEEDBACK CARD
+========================= */
+
+.feedback-badge{
+    margin-top:25px;
+
+    background:linear-gradient(135deg,#ff9800,#ff5722);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    color:white;
+}
+
+.feedback-badge i{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.feedback-badge h4{
+    margin-bottom:10px;
+}
+
+.feedback-badge p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.glass-profile{
+    margin-top:25px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+}
+
+.glass-profile img{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid rgba(255,255,255,0.3);
+}
+
+.glass-profile h4{
+    color:white;
+}
+
+.glass-profile p{
+    color:rgba(255,255,255,0.65);
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .glass-sidebar{
+        width:260px;
+    }
+
+    .glass-top h1{
+        font-size:28px;
+    }
+
+    .glass-menu a span{
+        font-size:15px;
+    }
+
+}
+
+/* =========================
+   GLASS MENU BUTTON
+========================= */
+
+.glass-menu-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:5000;
+
+    width:65px;
+    height:65px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    color:rgb(5, 56, 239);
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+
+    transition:0.4s ease;
+}
+
+.glass-menu-btn:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.glass-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.5);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.4s;
+
+    z-index:3000;
+}
+
+.glass-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.glass-sidebar{
+    position:fixed;
+
+    top:20px;
+    right:-350px;
+
+    width:300px;
+    height:92vh;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.35);
+
+    transition:0.5s ease;
+
+    z-index:4000;
+
+    overflow-y:auto;
+}
+
+/* ACTIVE */
+.glass-sidebar.active{
+    right:20px;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.glass-top{
+    margin-bottom:35px;
+}
+
+.glass-dots{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.glass-dots span{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.glass-dots span:nth-child(1){
+    background:#ff5f57;
+}
+
+.glass-dots span:nth-child(2){
+    background:#febb2e;
+}
+
+.glass-dots span:nth-child(3){
+    background:#28c840;
+}
+
+.glass-top h1{
+    color:white;
+    font-size:38px;
+    font-weight:700;
+}
+
+/* =========================
+   MENU LINKS
+========================= */
+
+.glass-menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.glass-menu h3{
+    color:rgba(255,255,255,0.6);
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.glass-menu a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    transition:0.3s;
+
+    background:rgba(255,255,255,0.05);
+}
+
+.glass-menu a i{
+    font-size:20px;
+    min-width:25px;
+}
+
+.glass-menu a span{
+    font-size:17px;
+    font-weight:500;
+}
+
+/* HOVER */
+.glass-menu a:hover{
+    background:rgba(255,255,255,0.15);
+    transform:translateX(-5px);
+}
+
+/* ACTIVE */
+.glass-menu a.active{
+    background:rgba(255,255,255,0.18);
+}
+
+/* =========================
+   FEEDBACK CARD
+========================= */
+
+.feedback-badge{
+    margin-top:25px;
+
+    background:linear-gradient(135deg,#ff9800,#ff5722);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    color:white;
+}
+
+.feedback-badge i{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.feedback-badge h4{
+    margin-bottom:10px;
+}
+
+.feedback-badge p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.glass-profile{
+    margin-top:25px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+}
+
+.glass-profile img{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid rgba(255,255,255,0.3);
+}
+
+.glass-profile h4{
+    color:white;
+}
+
+.glass-profile p{
+    color:rgba(255,255,255,0.65);
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .glass-sidebar{
+        width:260px;
+    }
+
+    .glass-top h1{
+        font-size:28px;
+    }
+
+    .glass-menu a span{
+        font-size:15px;
+    }
+
+}
+/* =========================
+   GLASS FEEDBACK SECTION
+========================= */
+
+.glass-feedback-section{
+    padding:100px 5%;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('../image/feedback.png');
+
+    background-size:cover;
+    background-position:center;
+
+    text-align:center;
+
+    position:relative;
+}
+
+/* HEADER */
+
+.feedback-header h2{
+    color:white;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.feedback-header p{
+    color:#f1f1f1;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.open-feedback-btn{
+    padding:15px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#00d2ff,#00ff9d);
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.open-feedback-btn:hover{
+    transform:scale(1.05);
+}
+
+/* OVERLAY */
+
+.feedback-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.4s;
+
+    z-index:999;
+}
+
+.feedback-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* MODAL */
+
+.glass-feedback-modal{
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0.7);
+
+    width:90%;
+    max-width:420px;
+
+    padding:35px 25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.4s ease;
+
+    z-index:1000;
+}
+
+/* ACTIVE */
+
+.glass-feedback-modal.active{
+    opacity:1;
+    visibility:visible;
+
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/* CLOSE */
+
+.close-feedback{
+    position:absolute;
+    top:15px;
+    right:20px;
+
+    color:white;
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+/* LOGO */
+
+.feedback-logo{
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(255,255,255,0.3);
+
+    margin-bottom:15px;
+}
+
+/* TITLE */
+
+.glass-feedback-modal h3{
+    color:white;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.glass-feedback-modal p{
+    color:#f1f1f1;
+    margin-bottom:20px;
+}
+
+/* INPUT */
+
+.feedback-input{
+    width:100%;
+    height:55px;
+
+    background:rgba(255,255,255,0.15);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:50px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 18px;
+
+    margin-bottom:18px;
+}
+
+.feedback-input i{
+    color:white;
+    margin-right:12px;
+}
+
+.feedback-input input,
+.feedback-input select{
+    width:100%;
+
+    background:transparent;
+    border:none;
+    outline:none;
+
+    color:white;
+    font-size:15px;
+}
+
+.feedback-input input::placeholder{
+    color:#f1f1f1;
+}
+
+.feedback-input select option{
+    color:black;
+}
+
+/* STARS */
+
+.glass-stars{
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.glass-stars label{
+    color:white;
+    font-weight:600;
+}
+
+.star-options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+.star-options label{
+    color:white;
+    font-size:15px;
+}
+
+/* TEXTAREA */
+
+.feedback-textarea textarea{
+    width:100%;
+    height:120px;
+
+    padding:18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.15);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    color:white;
+
+    resize:none;
+
+    margin-bottom:20px;
+}
+
+.feedback-textarea textarea::placeholder{
+    color:#f1f1f1;
+}
+
+/* BUTTON */
+
+.feedback-submit-btn{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#00d2ff,#00ff9d);
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.feedback-submit-btn:hover{
+    transform:scale(1.03);
+}
+
+/* FEEDBACK LIST */
+
+.feedback-list{
+    margin-top:50px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+/* FEEDBACK CARD */
+
+.feedback-item{
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    color:white;
+
+    text-align:left;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.feedback-item strong{
+    display:block;
+    margin:10px 0;
+}
+
+.feedback-item p{
+    color:#f1f1f1;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .glass-feedback-modal{
+        max-width:92%;
+        padding:30px 18px;
+    }
+
+    .feedback-header h2{
+        font-size:30px;
+    }
+
+}
+/* =========================
+   SMALL GLASS FEEDBACK FORM
+========================= */
+
+.glass-feedback-modal{
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+    max-width:340px;
+
+    max-height:90vh;
+    overflow-y:auto;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
+
+    z-index:9999;
+}
+
+/* TITLE */
+
+.glass-feedback-modal h3{
+    color:white;
+    font-size:24px;
+    text-align:center;
+    margin-bottom:5px;
+}
+
+.glass-feedback-modal p{
+    color:#f1f1f1;
+    text-align:center;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+/* INPUTS */
+
+.feedback-input{
+    width:100%;
+    height:50px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:40px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 15px;
+
+    margin-bottom:14px;
+}
+
+.feedback-input i{
+    color:white;
+    margin-right:10px;
+}
+
+.feedback-input input,
+.feedback-input select{
+    width:100%;
+
+    background:transparent;
+    border:none;
+    outline:none;
+
+    color:white;
+    font-size:14px;
+}
+
+/* PLACEHOLDER */
+
+.feedback-input input::placeholder{
+    color:#f1f1f1;
+}
+
+/* SELECT OPTION */
+
+.feedback-input select option{
+    color:black;
+}
+
+/* RATE */
+
+.glass-stars{
+    margin-bottom:15px;
+}
+
+.glass-stars label{
+    color:white;
+    font-size:15px;
+    font-weight:600;
+}
+
+/* STARS */
+
+.star-options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+    margin-top:10px;
+}
+
+.star-options label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:white;
+    font-size:14px;
+}
+
+/* TEXTAREA */
+
+.feedback-textarea textarea{
+    width:100%;
+    height:90px;
+
+    padding:14px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    color:white;
+
+    resize:none;
+
+    margin-bottom:15px;
+
+    font-size:14px;
+}
+
+.feedback-textarea textarea::placeholder{
+    color:#f1f1f1;
+}
+
+/* SUBMIT BUTTON */
+
+.feedback-submit-btn{
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#00d2ff,#00ff9d);
+
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.feedback-submit-btn:hover{
+    transform:scale(1.03);
+}
+
+/* CLOSE BUTTON */
+
+.close-feedback{
+    position:absolute;
+
+    top:12px;
+    right:15px;
+
+    color:white;
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .glass-feedback-modal{
+        width:92%;
+        padding:18px;
+    }
+
+    .glass-feedback-modal h3{
+        font-size:20px;
+    }
+
+}
+/* =========================
+   BLACK & WHITE GLASS FORM
+========================= */
+
+.registration-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    url('../image/background.png');
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* GLASS CONTAINER */
+.registration-container{
+    width:100%;
+    max-width:430px;
+
+    padding:40px 28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.45);
+}
+
+/* TITLE */
+.registration-container h2{
+    text-align:center;
+    color:white;
+    font-size:38px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+/* LINE */
+.registration-container h2::after{
+    content:"";
+    display:block;
+
+    width:90px;
+    height:4px;
+
+    background:white;
+
+    margin:14px auto 0;
+    border-radius:10px;
+}
+
+/* SUBTITLE */
+.registration-container p{
+    text-align:center;
+    color:#f1f1f1;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+/* INPUT BOX */
+.registration-form .input-box{
+    width:100%;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 18px;
+
+    margin-bottom:18px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.10);
+
+    border:1px solid rgba(255,255,255,0.18);
+}
+
+/* ICON */
+.registration-form .input-box i{
+    color:white;
+    margin-right:12px;
+    font-size:17px;
+}
+
+/* INPUTS */
+.registration-form .input-box input,
+.registration-form .input-box select{
+    width:100%;
+
+    background:transparent;
+    border:none;
+    outline:none;
+
+    color:white;
+    font-size:15px;
+}
+
+/* PLACEHOLDER */
+.registration-form .input-box input::placeholder{
+    color:#e5e5e5;
+}
+
+/* SELECT OPTION */
+.registration-form .input-box select option{
+    color:black;
+}
+
+/* PAYMENT BOX */
+.glass-payment{
+    background:rgba(0,0,0,0.55);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    padding:16px;
+
+    border-radius:18px;
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-weight:600;
+}
+
+/* BUTTON */
+.glass-register-btn{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:black;
+
+    font-size:17px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+}
+
+/* HOVER */
+.glass-register-btn:hover{
+    background:black;
+    color:white;
+
+    border:1px solid white;
+
+    transform:scale(1.03);
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .registration-container{
+        padding:30px 20px;
+    }
+
+    .registration-container h2{
+        font-size:30px;
+    }
+
+}
+/* =========================
+   RESPONSIVE SMALL GLASS FORM
+========================= */
+
+.registration-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px 12px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    url('../image/background.png');
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* CONTAINER */
+.registration-container{
+    width:100%;
+    max-width:340px;
+
+    padding:25px 18px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.registration-container h2{
+    text-align:center;
+    color:white;
+
+    font-size:28px;
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+/* LINE */
+.registration-container h2::after{
+    content:"";
+
+    display:block;
+
+    width:70px;
+    height:3px;
+
+    background:white;
+
+    margin:10px auto 0;
+
+    border-radius:10px;
+}
+
+/* TEXT */
+.registration-container p{
+    text-align:center;
+    color:#f1f1f1;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+/* INPUT BOX */
+.registration-form .input-box{
+    width:100%;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 15px;
+
+    margin-bottom:15px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,0.10);
+
+    border:1px solid rgba(255,255,255,0.18);
+}
+
+/* ICON */
+.registration-form .input-box i{
+    color:white;
+    margin-right:10px;
+    font-size:14px;
+}
+
+/* INPUT */
+.registration-form .input-box input,
+.registration-form .input-box select{
+    width:100%;
+
+    background:transparent;
+    border:none;
+    outline:none;
+
+    color:white;
+    font-size:14px;
+}
+
+/* PLACEHOLDER */
+.registration-form .input-box input::placeholder{
+    color:#e5e5e5;
+}
+
+/* SELECT OPTION */
+.registration-form .input-box select option{
+    color:black;
+}
+
+/* PAYMENT */
+.glass-payment{
+    background:rgba(0,0,0,0.55);
+
+    padding:14px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:14px;
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+.glass-register-btn{
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:black;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+/* HOVER */
+.glass-register-btn:hover{
+    background:black;
+    color:white;
+
+    border:1px solid white;
+}
+
+/* EXTRA SMALL MOBILE */
+@media(max-width:480px){
+
+    .registration-container{
+        max-width:100%;
+        padding:22px 15px;
+    }
+
+    .registration-container h2{
+        font-size:24px;
+    }
+
+    .registration-form .input-box{
+        height:46px;
+    }
+
+    .glass-register-btn{
+        padding:12px;
+    }
+}
+/* =========================
+   ALERT MESSAGE
+========================= */
+
+#alertBox{
+    display:none;
+
+    margin-top:15px;
+    padding:14px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:14px;
+    font-weight:600;
+
+    animation:fadeIn 0.4s ease;
+}
+
+/* SUCCESS */
+#alertBox.success{
+    background:rgba(0,255,120,0.18);
+    color:#ffffff;
+
+    border:1px solid rgba(0,255,120,0.4);
+}
+
+/* ERROR */
+#alertBox.error{
+    background:rgba(255,0,0,0.18);
+    color:#ffffff;
+
+    border:1px solid rgba(255,0,0,0.4);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }

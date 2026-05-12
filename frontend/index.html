@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhanga Technical Center</title>
@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
-
-
+<body>
 <header>
     <div class="logo-section">
-        <img src="assets/image/logo.png" alt="MTC Logo">
+        <img src="assets/image/logo.png">
         <h1>MUHANGA TECHNICAL CENTER</h1>
     </div>
     
@@ -43,34 +43,117 @@
         <p>Empowering students with technical skills for a better future.</p>
         <a href="#services" class="btn">Explore More</a>
     </div>
-    <body>
+<div class="language-switcher">
+    <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="rw">Kinyarwanda</option>
+        <option value="fr">French</option>
+    </select>
+</div>
 
 <!-- OVERLAY -->
 <div id="overlay" onclick="closeMenu()"></div>
 
-<!-- SIDE MENU -->
-<div id="sideMenu">
-    <span class="close-menu" onclick="closeMenu()">✖</span>
+<!-- MENU BUTTON -->
+<button class="glass-menu-btn" onclick="toggleMenu()">
+    ☰
+</button>
 
-    <h3 class="logo">Menu</h3>
-    <a href="#home" onclick="closeMenu()">🏠 Home</a>
-    <a href="#services" onclick="closeMenu()">💼 Services</a>
-    <a href="#course" onclick="closeMenu()">🎓 Courses</a>
-    <a href="#about" onclick="closeMenu()">👥 About</a>
-    <a href="#contact" onclick="closeMenu()">✉ Contact</a>
-    <a href="#feedback" onclick="closeMenu()">💬 Feedback</a>
-</div>
-<!-- Language Switcher -->
-<div class="language-switcher">
-    <select id="languageSwitcher">
-        <option value="en">🌍 English</option>
-        <option value="fr">🇫🇷 Français</option>
-        <option value="es">🇪🇸 Español</option>
-        <option value="kin">🇷🇼 Kinyarwanda</option>
-        <option value="sw">🇹🇿 Kiswahili</option>
-    </select>
+<!-- OVERLAY -->
+<div class="glass-overlay" id="glassOverlay" onclick="toggleMenu()"></div>
+
+<!-- GLASS MENU -->
+<div class="glass-sidebar" id="glassSidebar">
+
+    <!-- TOP -->
+    <div class="glass-top">
+
+        <div class="glass-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h1>MTC</h1>
+
+    </div>
+    <!-- MENU -->
+    <div class="glass-menu">
+
+        <h3>MENU</h3>
+
+        <a href="#home" class="active" onclick="toggleMenu()">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="#services" onclick="toggleMenu()">
+            <i class="fas fa-briefcase"></i>
+            <span>Services</span>
+        </a>
+
+        <a href="#course" onclick="toggleMenu()">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Courses</span>
+        </a>
+
+        <a href="#about" onclick="toggleMenu()">
+            <i class="fas fa-users"></i>
+            <span>About</span>
+        </a>
+
+        <a href="#contact" onclick="toggleMenu()">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+
+        <a href="#feedback" onclick="toggleMenu()">
+            <i class="fas fa-comments"></i>
+            <span>Feedback</span>
+        </a>
+
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="feedback-badge">
+
+        <i class="fas fa-star"></i>
+
+        <h4>Leave Feedback</h4>
+
+        <p>
+            Share your experience with Muhanga Technical Center
+        </p>
+
+    </div>
+
+    <!-- PROFILE -->
+    <div class="glass-profile">
+
+        <img src="assets/image/logo.png" alt="MTC">
+
+        <div>
+            <h4>Muhanga TC</h4>
+            <p>Technical Center</p>
+        </div>
+
+    </div>
+
 </div>
 
+<script>
+function toggleMenu(){
+
+    document
+    .getElementById("glassSidebar")
+    .classList.toggle("active");
+
+    document
+    .getElementById("glassOverlay")
+    .classList.toggle("active");
+
+}
+</script>
 <button class="menu-btn" onclick="openMenu()">☰</button>
 <script>
 function openMenu() {
@@ -258,16 +341,20 @@ function goHome() {
 
             <div class="about-box">
                 <img src="assets/image/teacher.png" alt="Teachers">
+                <img src="assets/image/hirwa reymond.png" alt="Teachers">
+                <img src="assets/image/sandirine.png" alt="Teachers">
                 <p>Qualified Teachers</p>
             </div>
 
             <div class="about-box">
                 <img src="assets/image/ropresentor.png" alt="Head of School">
-                <p>Head of School</p>
+                 <img src="assets/image/dos.png" alt="Head of School">
+                <p>Head of School and other staff</p>
             </div>
 
             <div class="about-box">
                 <img src="assets/image/acc 2.jpeg" alt="Classroom">
+                <img src="assets/image/nit 2.jpeg" alt="Classroom">
                 <p>Modern Classrooms</p>
             </div>
 
@@ -395,148 +482,243 @@ function goHome() {
     </div>
 
 </section>
-<section id="feedback" class="feedback-section">
+<section id="feedback" class="glass-feedback-section">
 
-    <h2>Community Feedback</h2>
+    <div class="feedback-header">
+        <h2>Community Feedback</h2>
+        <p>Share your experience with Muhanga Technical Center</p>
 
-    <!-- BUTTON -->
-    <div class="feedback-btn-area">
-        <button class="feedback-btn" onclick="openFeedbackForm()">
-            <i class="fas fa-comment-dots"></i> Leave Feedback
+        <button class="open-feedback-btn" onclick="openFeedbackForm()">
+            <i class="fas fa-comment-dots"></i>
+            Leave Feedback
         </button>
     </div>
 
-    <!-- MODAL FORM -->
-    <div id="feedbackFormBox" class="feedback-modal">
+    <!-- OVERLAY -->
+    <div class="feedback-overlay" id="feedbackOverlay"></div>  
+<div class="glass-feedback-modal" id="feedbackModal">
 
-        <div class="feedback-modal-content">
+        <!-- CLOSE -->
+        <span class="close-feedback" onclick="openFeedbackForm()">
+            <i class="fas fa-times"></i>
+        </span>
 
-            <span class="close-btn" onclick="openFeedbackForm()">×</span>
+        <!-- LOGO -->
+        <img src="assets/image/logo.png" class="feedback-logo" alt="MTC">
 
-            <h3>Share Your Feedback</h3>
+        <h3>Student Feedback</h3>
 
-            <form id="feedbackForm">
+        <p>Your opinion helps us improve</p>
 
-                <!-- NAME -->
-                <input type="text" id="fb_name" placeholder="Your Name (optional)">
+        <!-- FORM -->
+        <form id="feedbackForm">
 
-                <!-- ROLE -->
+            <!-- NAME -->
+            <div class="feedback-input">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fb_name" placeholder="Your Name">
+            </div>
+
+            <!-- ROLE -->
+            <div class="feedback-input">
+                <i class="fas fa-users"></i>
+
                 <select id="fb_role">
                     <option value="Student">Student</option>
                     <option value="Parent">Parent</option>
                     <option value="Teacher">Teacher</option>
                     <option value="Visitor">Visitor</option>
                 </select>
+            </div>
 
-                <!-- STARS -->
-                <div class="stars">
-                    <label>Rating:</label>
-                    <div>
-                        <input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐
-                        <input type="radio" name="rating" value="4"> ⭐⭐⭐⭐
-                        <input type="radio" name="rating" value="3"> ⭐⭐⭐
-                        <input type="radio" name="rating" value="2"> ⭐⭐
-                        <input type="radio" name="rating" value="1"> ⭐
-                    </div>
+            <!-- RATING -->
+            <div class="glass-stars">
+
+                <label>Rate Us</label>
+
+                <div class="star-options">
+                    <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+                    <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
+                    <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
+                    <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
+                    <label><input type="radio" name="rating" value="1"> ⭐</label>
                 </div>
 
-                <!-- MESSAGE -->
-                <textarea id="fb_message" placeholder="Write your feedback..." required></textarea>
+            </div>
 
-                <!-- SUBMIT -->
-                <button type="submit">Submit Feedback</button>
+            <!-- MESSAGE -->
+            <div class="feedback-textarea">
+                <textarea
+                    id="fb_message"
+                    placeholder="Write your feedback..."
+                    required></textarea>
+            </div>
 
-            </form>
+            <!-- BUTTON -->
+            <button type="submit" class="feedback-submit-btn">
+                Submit Feedback
+            </button>
 
-        </div>
+        </form>
 
     </div>
+
+    <!-- FEEDBACK DISPLAY -->
+    <div id="feedbackList" class="feedback-list"></div>
+
+</section>
 
     <!-- DISPLAY FEEDBACK -->
     <div id="feedbackList" class="feedback-list"></div>
 <script>
-// OPEN / CLOSE MODAL
-function openFeedbackForm() {
-    const modal = document.getElementById("feedbackFormBox");
 
-    if (modal.style.display === "flex") {
-        modal.style.display = "none";
-    } else {
-        modal.style.display = "flex";
-        modal.style.justifyContent = "center";
-        modal.style.alignItems = "center";
-    }
+// OPEN/CLOSE MODAL
+function openFeedbackForm(){
+
+    const modal =
+    document.getElementById("feedbackModal");
+
+    const overlay =
+    document.getElementById("feedbackOverlay");
+
+    modal.classList.toggle("active");
+    overlay.classList.toggle("active");
+
 }
 
+// CLOSE WHEN CLICKING OVERLAY
+document
+.getElementById("feedbackOverlay")
+.addEventListener("click", openFeedbackForm);
+
 // SUBMIT FEEDBACK
-document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+document
+.getElementById("feedbackForm")
+.addEventListener("submit", function(e){
+
     e.preventDefault();
 
-    const name = document.getElementById("fb_name").value || "Anonymous";
-    const role = document.getElementById("fb_role").value;
-    const message = document.getElementById("fb_message").value;
+    const name =
+    document.getElementById("fb_name").value || "Anonymous";
 
-    let rating = document.querySelector('input[name="rating"]:checked');
+    const role =
+    document.getElementById("fb_role").value;
+
+    const message =
+    document.getElementById("fb_message").value;
+
+    let rating =
+    document.querySelector('input[name="rating"]:checked');
+
     rating = rating ? rating.value : 5;
 
-    // Create feedback card
-    const feedbackItem = document.createElement("div");
+    // CREATE CARD
+    const feedbackItem =
+    document.createElement("div");
+
     feedbackItem.classList.add("feedback-item");
 
     feedbackItem.innerHTML = `
-        <div class="stars">${"⭐".repeat(rating)}</div>
-        <strong>${name}</strong> (${role})
+        <div>${"⭐".repeat(rating)}</div>
+        <strong>${name} (${role})</strong>
         <p>${message}</p>
     `;
 
-    document.getElementById("feedbackList").prepend(feedbackItem);
+    // ADD TO PAGE
+    document
+    .getElementById("feedbackList")
+    .prepend(feedbackItem);
 
-    // reset form
+    // RESET FORM
     this.reset();
 
-    // close modal
-    document.getElementById("feedbackFormBox").style.display = "none";
+    // CLOSE MODAL
+    openFeedbackForm();
+
 });
+
 </script>
 </section>
 </section>
 <section id="registration" class="section registration-section">
 <div id="registration" class="container">
 
-    <h2>Student Registration</h2>
-
-    <div id="alert"></div>
-
-    <form id="form">
-
-        <input type="text" id="name" placeholder="Full Name" required>
-
-        <input type="email" id="email" placeholder="Email" required>
-
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-
-        <select id="course" required>
-            <option value="">Select Course</option>
-            <option>ICT</option>
-            <option>Networking</option>
-            <option>ICT& Software Development</option>
-            <option>Automobile</option>
-            <option>Building</option>
         </select>
+<section class="registration-section">
 
-        <select id="network" required>
-            <option value="mtn">MTN Mobile Money</option>
-            <option value="airtel">Airtel Money</option>
-        </select>
+    <div class="registration-container">
 
-        <div id="paymentNumber">
-            MTN Pay To:0784990502
-        </div>
+        <h2>Student Registration</h2>
 
-        <input type="text" id="paymentCode" placeholder="Transaction ID" required>
+        <p>Join Muhanga Technical Center</p>
 
-  <a href="#registration" class="mini-register-btn">
-    Register Now
+        <form id="form" class="registration-form">
+
+            <!-- NAME -->
+            <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+
+            <!-- PHONE -->
+            <div class="input-box">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </div>
+
+            <!-- COURSE -->
+            <div class="input-box">
+                <i class="fas fa-book"></i>
+
+                <select id="course" required>
+                    <option value="">Select Course</option>
+                    <option>ICT</option>
+                    <option>Networking</option>
+                    <option>Software Development</option>
+                    <option>Automobile</option>
+                    <option>Building Construction</option>
+                </select>
+            </div>
+
+            <!-- NETWORK -->
+            <div class="input-box">
+                <i class="fas fa-mobile-alt"></i>
+                <select id="network">
+                    <option value="mtn">MTN Mobile Money</option>
+                    <option value="airtel">Airtel Money</option>
+                </select>
+            </div>
+
+            <!-- PAYMENT -->
+            <div id="paymentNumber" class="glass-payment">
+                MTN Pay To:+250 784990502/ 0726120427
+            </div>
+
+            <!-- TRANSACTION -->
+            <div class="input-box">
+                <i class="fas fa-money-check"></i>
+                <input type="text" id="paymentCode" placeholder="Transaction ID" required>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="glass-register-btn">
+                Register Now
+            </button>
+
+           <!-- ALERT MESSAGE -->
+<div id="alertBox"></div>
+
+        </form>
+
+    </div>
+
+</section>
 </a>
     </form>
 
@@ -615,7 +797,41 @@ document.getElementById("form").addEventListener("submit", async function(e) {
 });
 </script>
     </div>
+<script>
+/* =========================
+   ACTIVE NAVIGATION ON SCROLL
+========================= */
 
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-slider ul li a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+</script>
 </section>
 </section>
 <footer class="footer">

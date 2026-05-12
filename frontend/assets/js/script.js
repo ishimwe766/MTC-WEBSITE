@@ -247,3 +247,108 @@ function googleTranslateElementInit() {
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
 }
+const translations = {
+
+    en: {
+
+        heroTitle: "Muhanga Technical Center",
+        heroText: "Welcome to our technical education center",
+        heroBtn: "Get Started",
+
+        servicesTitle: "Our Services",
+
+        service1Title: "Automobile",
+        service1Text: "Learn modern automobile technology",
+
+        service2Title: "Building Construction",
+        service2Text: "Learn professional construction skills",
+
+        aboutTitle: "About Us",
+        aboutText: "We provide quality technical education.",
+
+        contactTitle: "Contact Us"
+    },
+
+    rw: {
+
+        heroTitle: "Muhanga Technical Center",
+        heroText: "Murakaza neza mu kigo cyacu cy'imyuga",
+        heroBtn: "Tangira",
+
+        servicesTitle: "Serivisi Zacu",
+
+        service1Title: "Ubwubatsi bw'Imodoka",
+        service1Text: "Wige ikoranabuhanga ry'imodoka",
+
+        service2Title: "Ubwubatsi",
+        service2Text: "Wige imyuga y'ubwubatsi",
+
+        aboutTitle: "Ibyerekeye Twebwe",
+        aboutText: "Dutanga uburezi bwiza bw'imyuga.",
+
+        contactTitle: "Twandikire"
+    },
+
+    fr: {
+
+        heroTitle: "Centre Technique de Muhanga",
+        heroText: "Bienvenue dans notre centre technique",
+        heroBtn: "Commencer",
+
+        servicesTitle: "Nos Services",
+
+        service1Title: "Automobile",
+        service1Text: "Apprenez la technologie automobile moderne",
+
+        service2Title: "Construction",
+        service2Text: "Apprenez les compétences professionnelles",
+
+        aboutTitle: "À Propos",
+        aboutText: "Nous fournissons une éducation technique de qualité.",
+
+        contactTitle: "Contactez-nous"
+    }
+
+};
+
+/* SELECT */
+const languageSelect = document.getElementById("languageSelect");
+
+/* CHANGE LANGUAGE */
+function changeLanguage(language){
+
+    document.querySelectorAll("[data-lang]").forEach(element => {
+
+        const key = element.getAttribute("data-lang");
+
+        if(translations[language][key]){
+
+            element.textContent = translations[language][key];
+
+        }
+
+    });
+
+}
+
+/* EVENT */
+languageSelect.addEventListener("change", () => {
+
+    const selectedLanguage = languageSelect.value;
+
+    changeLanguage(selectedLanguage);
+
+    localStorage.setItem("language", selectedLanguage);
+
+});
+
+/* LOAD SAVED LANGUAGE */
+window.addEventListener("DOMContentLoaded", () => {
+
+    const savedLanguage = localStorage.getItem("language") || "en";
+
+    languageSelect.value = savedLanguage;
+
+    changeLanguage(savedLanguage);
+
+});
