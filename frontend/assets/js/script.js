@@ -371,34 +371,12 @@ app.post("/api/admin/login", (req, res) => {
         error: "Invalid email or password"
     });
 });
-<script>
+
 function toggleLangMenu(){
     document.getElementById("langMenu").classList.toggle("show");
-}
-
-// SIMPLE LANGUAGE SYSTEM (basic demo)
-function setLang(lang){
-
-    if(lang === "en"){
-        document.body.style.direction = "ltr";
-        alert("English selected");
+};
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === "A") {
+        window.location.href = "admin.html";
     }
-
-    if(lang === "fr"){
-        document.body.style.direction = "ltr";
-        alert("French selected (you need translations)");
-    }
-
-    if(lang === "rw"){
-        document.body.style.direction = "ltr";
-        alert("Kinyarwanda selected (you need translations)");
-    }
-
-    if(lang === "es"){
-        document.body.style.direction = "ltr";
-        alert("Spanish selected (you need translations)");
-    }
-
-    document.getElementById("langMenu").classList.remove("show");
-}
-</script>
+});
