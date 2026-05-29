@@ -43,13 +43,6 @@
         <p>Empowering students with technical skills for a better future.</p>
         <a href="#services" class="btn">Explore More</a>
     </div>
-<div class="language-switcher">
-    <select id="languageSelect">
-        <option value="en">English</option>
-        <option value="rw">Kinyarwanda</option>
-        <option value="fr">French</option>
-    </select>
-</div>
 
 <!-- OVERLAY -->
 <div id="overlay" onclick="closeMenu()"></div>
@@ -447,7 +440,7 @@ function goHome() {
             const response = await fetch('https://mtc-backend-1ske.onrender.com/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
+                body: JSON.stringify(datan)
             });
 
             const result = await response.json();
@@ -589,20 +582,20 @@ function openFeedbackForm(){
     modal.classList.toggle("active");
     overlay.classList.toggle("active");
 
-}
+}  
 
 // CLOSE WHEN CLICKING OVERLAY
 document
 .getElementById("feedbackOverlay")
 .addEventListener("click", openFeedbackForm);
 
-// SUBMIT FEEDBACK
+ // SUBMIT FEEDBACK
 document
 .getElementById("feedbackForm")
-.addEventListener("submit", function(e){
-
+.addEventListener("submit", function(e) {
     e.preventDefault();
 
+    // GET VALUES
     const name =
     document.getElementById("fb_name").value || "Anonymous";
 
@@ -639,9 +632,8 @@ document
 
     // CLOSE MODAL
     openFeedbackForm();
-
+    
 });
-
 </script>
 </section>
 </section>
@@ -871,4 +863,4 @@ window.addEventListener("scroll", () => {
 
 </footer>
 </body>
-</html> 
+</html>
