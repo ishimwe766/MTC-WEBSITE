@@ -33,8 +33,8 @@ app.post('/api/contact', async (req, res) => {
         const { name, email, subject, message } = req.body;
 
         if (!name || !email || !subject || !message) {
-            return res.status(400).json({
-                error: 'All fields are required!'
+         return res.status(400).json({
+              error: 'All fields are required!'
             });
         }
 
@@ -43,7 +43,7 @@ app.post('/api/contact', async (req, res) => {
             replyTo: email,
             to: process.env.EMAIL_USER,
             subject: `New Contact Form Submission: ${subject}`,
-            text: `
+          text: `
 Name: ${name}
 Email: ${email}
 Subject: ${subject}
@@ -69,5 +69,5 @@ ${message}
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
