@@ -7,14 +7,18 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 
 // Middleware
-app.use(cors()); // To allow frontend requests
-app.use(
-    cors({
-        origin:'*'
-    })
-);
+app.use(cors({
+    origin: '*'
+}));
 
-// Email Transporter Configuration
+app.use(express.json()); // IMPORTANT
+
+// Health Route
+app.get("/", (req, res) => {
+    res.send("Server is running");
+});
+
+// Email Transporter
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -23,40 +27,47 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// POST route to handle form submission
+// Contact Route
 app.post('/api/contact', async (req, res) => {
     try {
         const { name, email, subject, message } = req.body;
 
-        // Validation for missing fields
         if (!name || !email || !subject || !message) {
-            return res.status(400).json({ error: 'All fields are required!' });
+            return res.status(400).json({
+                error: 'All fields are required!'
+            });
         }
 
         const mailOptions = {
-            from: email,
+            from: process.env.EMAIL_USER,
+            replyTo: email,
             to: process.env.EMAIL_USER,
             subject: `New Contact Form Submission: ${subject}`,
-            text: `You have received a new message from your website contact form.
-
+            text: `
 Name: ${name}
 Email: ${email}
 Subject: ${subject}
+
 Message:
-${message}`
+${message}
+`
         };
 
-        // Send Email
         await transporter.sendMail(mailOptions);
-        
-        // Respond on success
-        res.status(200).json({ success: 'Message sent successfully!' });
+
+        res.status(200).json({
+            success: 'Message sent successfully!'
+        });
+
     } catch (error) {
-        console.error('Email error:', error);
-        res.status(500).json({ error: 'Failed to send message.' });
+        console.error(error);
+
+        res.status(500).json({
+            error: 'Failed to send message.'
+        });
     }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running beautifully on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
