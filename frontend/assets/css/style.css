@@ -2406,3 +2406,160 @@ form button:hover{
         transform:translateY(0);
     }
 }
+/* =========================
+   GOOGLE TRANSLATE GLASS STYLE
+========================= */
+
+#google_translate_element {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+
+    padding: 10px 14px;
+
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+/* hover effect */
+#google_translate_element:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* dropdown inside Google widget */
+#google_translate_element select {
+    background: transparent !important;
+    color: white !important;
+
+    border: none !important;
+    outline: none !important;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+/* remove google default branding box clutter */
+.goog-te-gadget {
+    font-family: inherit !important;
+    color: white !important;
+}
+
+/* hide google top banner */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+/* hide google logo (optional cleaner look) */
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget span {
+    display: none !important;
+}
+
+/* mobile fix */
+@media(max-width: 480px) {
+    #google_translate_element {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 10px;
+    }
+}
+/* =========================
+   PRO LANGUAGE SWITCHER
+========================= */
+
+.lang-switcher{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    z-index:9999;
+    font-family:'Inter',sans-serif;
+}
+
+/* main button */
+.lang-btn{
+    padding:12px 16px;
+    border:none;
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    color:white;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    transition:0.3s ease;
+}
+
+.lang-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.18);
+}
+
+/* dropdown menu */
+.lang-menu{
+    display:none;
+    flex-direction:column;
+
+    margin-top:10px;
+
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(20px);
+
+    border-radius:16px;
+    padding:10px;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* active menu */
+.lang-menu.show{
+    display:flex;
+}
+
+/* buttons inside menu */
+.lang-menu button{
+    background:transparent;
+    border:none;
+
+    color:white;
+    text-align:left;
+
+    padding:10px;
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+    font-size:14px;
+}
+
+.lang-menu button:hover{
+    background:rgba(255,255,255,0.15);
+    transform:translateX(5px);
+}

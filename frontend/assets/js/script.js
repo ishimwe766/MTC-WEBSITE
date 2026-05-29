@@ -352,3 +352,53 @@ window.addEventListener("DOMContentLoaded", () => {
     changeLanguage(savedLanguage);
 
 });
+app.use(express.json());
+
+app.post("/api/admin/login", (req, res) => {
+
+    const { email, password } = req.body;
+
+    const adminEmail = "admin@gmail.com";
+    const adminPassword = "12345";
+
+    if(email === adminEmail && password === adminPassword){
+        return res.json({
+            success: true
+        });
+    }
+
+    res.status(401).json({
+        error: "Invalid email or password"
+    });
+});
+<script>
+function toggleLangMenu(){
+    document.getElementById("langMenu").classList.toggle("show");
+}
+
+// SIMPLE LANGUAGE SYSTEM (basic demo)
+function setLang(lang){
+
+    if(lang === "en"){
+        document.body.style.direction = "ltr";
+        alert("English selected");
+    }
+
+    if(lang === "fr"){
+        document.body.style.direction = "ltr";
+        alert("French selected (you need translations)");
+    }
+
+    if(lang === "rw"){
+        document.body.style.direction = "ltr";
+        alert("Kinyarwanda selected (you need translations)");
+    }
+
+    if(lang === "es"){
+        document.body.style.direction = "ltr";
+        alert("Spanish selected (you need translations)");
+    }
+
+    document.getElementById("langMenu").classList.remove("show");
+}
+</script>

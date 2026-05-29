@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
 <header>
@@ -131,9 +132,36 @@
         </div>
 
     </div>
+<div class="lang-switcher">
+  <button class="lang-btn" onclick="toggleLangMenu()">
+    🌍 Language
+  </button>
 
+  <div class="lang-menu" id="langMenu">
+    <button onclick="setLang('en')">🇺🇸 English</button>
+    <button onclick="setLang('fr')">🇫🇷 French</button>
+    <button onclick="setLang('rw')">🇷🇼 Kinyarwanda</button>
+    <button onclick="setLang('es')">🇪🇸 Spanish</button>
+  </div>
 </div>
+</div>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,fr,es,ar,sw',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
 
+<script type="text/javascript" 
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 <script>
 function toggleMenu(){
 
